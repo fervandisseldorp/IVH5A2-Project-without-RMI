@@ -7,6 +7,7 @@ package edu.avans.ivh5.client.view.ui;
 
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
+import java.util.Date;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -20,7 +21,7 @@ import javax.swing.border.EmptyBorder;
 public class CompanyInfoPanel extends JPanel {
     
     private JButton saveButton;
-    private JTextField nameField, adressField, postcodeField, placeField, phoneField, mailField, KVKField, IBANField, BICField, bankField;
+    private JTextField nameField, lastNameField, adressField, postcodeField, placeField, phoneField, mailField, KVKField, IBANField, BICField, bankField;
     
     public CompanyInfoPanel() {
         setLayout(new BorderLayout());
@@ -50,6 +51,19 @@ public class CompanyInfoPanel extends JPanel {
         panel.add(new JLabel(""));
         panel.add(new JLabel(""));
         // end of row 2
+        
+        //// row 2
+        /* lastNameField moet nog weg gezet worden
+            panel.add(new JLabel("Naam praktijk:"));
+
+            nameField = new JTextField();
+            panel.add(nameField);
+
+            panel.add(new JLabel(""));
+            panel.add(new JLabel(""));
+        */
+        // end of row 2
+        
         
         // row 3
         panel.add(new JLabel("Straatnaam + huisnummer:"));
@@ -143,4 +157,83 @@ public class CompanyInfoPanel extends JPanel {
         return panel;
     }
     
+    public String getNaamField() {
+        return nameField.getText();
+    }
+
+    public void setNaamField(String naam) {
+        nameField.setText(naam);
+    }
+    
+    public String getAdressField() {
+        return adressField.getText();
+    }
+
+    public void setAdressField(String naam) {
+        adressField.setText(naam);
+    }
+    
+    public String getPostcodeField() {
+        return postcodeField.getText();
+    }
+
+    public void setPostcodeField(String postalcode) {
+        postcodeField.setText(postalcode);
+    }    
+    
+    public String getPlaceField() {
+        return placeField.getText();
+    }
+
+    public void setPlaceField(String place) {
+        placeField.setText(place);
+    }
+    
+    public String getPhoneField() {
+        return phoneField.getText();
+    }
+
+    public void setPhoneField(String phoneNo) {
+        phoneField.setText(phoneNo);
+    }
+    
+    public String getMailField() {
+        return mailField.getText();
+    }
+
+    public void setMailField(String email) {
+        mailField.setText(email);
+    }
+    
+    public String getKVKField() {
+        return KVKField.getText();
+    }
+
+    public void setKVKField(String KVK) {
+        KVKField.setText(KVK);
+    }
+    
+    public String getIbanField() {
+        return IBANField.getText();
+    }
+
+    public void setIbanField(String Iban) {
+        IBANField.setText(Iban);
+    }
+    
+    public String getBICField() {
+        return BICField.getText();
+    }
+
+    public void setBICField(String BIC) {
+        BICField.setText(BIC);
+    }
+    
+    public String getBankField() {
+        return bankField.getText();
+    }
+
+    public void setBankField(String bank) {
+        bankField.setText(bank);
+    }
 }
