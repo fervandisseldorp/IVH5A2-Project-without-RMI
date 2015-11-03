@@ -6,7 +6,6 @@
 package edu.avans.ivh5.client.view.ui;
 
 import java.awt.Color;
-import java.awt.GridLayout;
 import javax.swing.*;
 import javax.swing.border.Border;
 
@@ -15,92 +14,44 @@ import javax.swing.border.Border;
  * @author ferdinand
  */
 public class AddTreatmentScreen extends JFrame {
-    private JPanel paneeltop, paneelmid, paneladdnew, paneltable, panelbot,
-            panel1, panel2, panel3, panel4, panel5, panel6, panel7, panel8, panel9,
-            panel10, panel11, panel12;
-    private JComboBox therapists;
+    private JPanel completepanel, panel1top, panel2top;
+    private JLabel therapistsLabel, klantLabel;
+    private JComboBox comboBox;
+    private JTextField searchField;
+    
     
     public AddTreatmentScreen(){
-        //CONSTRUCTOR fRAME   
         
-        init();
+        setUI();
     }
     
-    
-    private void init(){
+    private void setUI(){
         setSize(400, 600);
-        setResizable(false);
+        setTitle("nieuwe behandeling");
         setLocationRelativeTo(null);
-        JPanel panel = createAddTreatmentPanel();
-        setContentPane( panel );
-
-        setVisible(true);
+        add(createTreatmentInfoPanel() );
+        
+        
     }
     
-    public JPanel createAddTreatmentPanel(){
-        JPanel panel = new JPanel();
-        panel.setLayout( new GridLayout(7,1,5,5) );
-        Border border = BorderFactory.createLineBorder(Color.BLACK);
+    private JPanel createTreatmentInfoPanel() {
+        Border border = BorderFactory.createLineBorder(Color.black);
+        completepanel = new JPanel();
+        panel1top = new JPanel();
+        panel1top.setSize(100, 300);
+        panel1top.setBorder(border);
+        therapistsLabel = new JLabel("Therapists");
+        comboBox = new JComboBox();
+        panel1top.add(therapistsLabel);
+        panel1top.add(comboBox);
+        panel2top = new JPanel();
+        panel2top.setBounds(310, 0, 100, 300);
+        panel2top.setBorder(border);
+        searchField = new JTextField(10);
+        panel2top.add(searchField);
         
-        paneeltop = new JPanel( new GridLayout(3,2,10,10));
-        paneelmid = new JPanel( new GridLayout(1,1,5,5));
-        paneladdnew = new JPanel( new GridLayout(2,1, 5, 5 ));
-        paneltable = new JPanel( new GridLayout(1,1, 5, 5 ));
-        panelbot = new JPanel( new GridLayout(2, 1, 5, 5));
-        panel1 = new JPanel();
-        panel2 = new JPanel();
-        panel3 = new JPanel();
-        panel4 = new JPanel();
-        panel5 = new JPanel();
-        panel6 = new JPanel();
-        panel7 = new JPanel();
-        panel8 = new JPanel();
-        panel9 = new JPanel();
-        panel10 = new JPanel();
-        panel11= new JPanel();
-        panel12= new JPanel();
-        
-    
-        panel1.setBorder(border);
-        therapists = new JComboBox();
-        panel1.add(therapists);
-        
-        panel2.setBorder(border);
-        JTextField searchfield = new JTextField();
-        panel1.add( searchfield );
-        
-        JLabel label1 = new JLabel("ID");
-        panel3.add( label1 );
-        
-        JButton saveButton = new JButton();
-        panel11.add( saveButton);
-        
-        JButton cancelButton = new JButton();
-        panel12.add( cancelButton );
-                
-        
-        paneeltop.add( panel1);
-        paneeltop.add( panel2);
-        paneeltop.add( panel3);
-        paneeltop.add( panel4);
-        paneeltop.add( panel5);
-        paneeltop.add( panel6);
-        paneelmid.add( panel7);
-        paneladdnew.add( panel8);
-        paneladdnew.add( panel9 );
-        paneltable.add( panel10 ); 
-        panelbot.add( panel11);
-        panelbot.add( panel12);
-       
-        panel.add(paneeltop);
-        panel.add(paneelmid);
-        panel.add(paneladdnew);
-        panel.add(paneltable);
-        panel.add(panelbot);
-        
-        
-        return panel;
+        completepanel.add(panel1top, panel2top);
+        return completepanel;
     }
     
 }
-   

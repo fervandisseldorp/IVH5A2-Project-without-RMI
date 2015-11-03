@@ -21,7 +21,7 @@ public class XMLDOMUserDAO implements UserDAOIF {
     private Document document = null;
     
     public XMLDOMUserDAO() {
-        this.domDocument = new XmlDOMDocument("C:\\Users\\ferdinand\\Documents\\GitHub\\IVH5\\IVH5A2-Project-zonder-RMI\\Java Physio Server\\resources\\accounts.xml", "C:\\Users\\ferdinand\\Documents\\GitHub\\IVH5\\IVH5A2-Project-zonder-RMI\\Java Physio Server\\resources\\accounts.xsd");
+        this.domDocument = new XmlDOMDocument("C:\\Users\\ferdinand\\Documents\\repositories\\VH5map\\IVH5A2-Project-zonder-RMI\\Java Physio Server\\resources\\accounts.xml", "C:\\Users\\ferdinand\\Documents\\repositories\\VH5map\\IVH5A2-Project-zonder-RMI\\Java Physio Server\\resources\\accounts.xsd");
         this.document = domDocument.getDocument();
     }
 

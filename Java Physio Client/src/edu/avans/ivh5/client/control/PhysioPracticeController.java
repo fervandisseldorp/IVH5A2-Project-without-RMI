@@ -8,6 +8,7 @@ package edu.avans.ivh5.client.control;
 import edu.avans.ivh5.api.PhysioManagerClientIF;
 import edu.avans.ivh5.api.PracticeManagerClientIF;
 import edu.avans.ivh5.client.view.ui.CompanyInfoPanel;
+import edu.avans.ivh5.shared.model.domain.PhysioPractice;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
@@ -43,13 +44,7 @@ public class PhysioPracticeController implements ActionListener, KeyListener {
 
     @Override
     public void keyPressed(KeyEvent e) {
-        if (e.getKeyCode() == KeyEvent.VK_ENTER) {
-            switch (parentScreen.getFocusOwner().getName()) {
-                case "saveButton":
-                    save();
-                    break;
-            }
-        }
+
     }
 
     @Override
